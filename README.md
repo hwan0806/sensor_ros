@@ -21,9 +21,9 @@ Repository for SparoLab sensor ros packages
 
 ## Prerequisities
 1. sensor SDK setup
-[SparoLab sensor-SDK setup guid](https://github.com/hwan0806/sensor_sdk)
+[SparoLab sensor-SDK setup guide](https://github.com/hwan0806/sensor_sdk)
 2. All ros packages are for ros-noetic ver.
-3. register your personal LiDAR IP. 
+3. register your personal LiDAR IP on your host PC.
 
 ## How to build?
 ```bash
@@ -32,7 +32,7 @@ cd ~/(your_workspace)/sensor_ros
 sh ros_setup.sh [arg1] [arg2] [arg3]
 ```
 
-#### what is the above arguments?
+** what is the above arguments? **
 * arg1 : full serial number of Ouster LiDAR
 * arg2 : full serial number of AVIA LiDAR + '1'
 * arg3 : last two serial number of MID360 LiDAR 
