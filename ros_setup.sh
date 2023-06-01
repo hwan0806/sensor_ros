@@ -32,10 +32,10 @@ sed -i 's/"sensor_hostname" /"sensor_hostname" default="'$Ouster'.local" /g' src
 sed -i 's/"timestamp_mode" default=" "/"timestamp_mode" default="TIME_FROM_ROS_TIME"/g' src/ouster-ros/launch/sensor.launch
 
 #3. RealSense-ROS debian package install (https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy)
-sudo apt-get install ros-noetic-realsense2-camera
+sudo apt-get install -y ros-noetic-realsense2-camera
 
 #4. Microstrain-IMU debian package install (https://github.com/LORD-MicroStrain/microstrain_inertial)
-sudo apt-get install ros-noetic-microstrain-inertial-driver
+sudo apt-get install -y ros-noetic-microstrain-inertial-driver
 
 #5. TDR-3000 GPS 
 
