@@ -5,6 +5,8 @@ Ouster="$1"
 AVIA="$2"
 MID360="$3"
 
+# 0. install requirements
+sudo apt install -y ros-noetic-pcl-ros build-essential libeigen3-dev libjsoncpp-dev libspdlog-dev libcurl4-openssl-dev cmake
 
 # 1. Livox ROS Driver2
 source /opt/ros/noetic/setup.sh
@@ -26,3 +28,21 @@ sed -i 's/"imu_rate": 0/"imu_rate": 1/g' src/livox_ros_driver/livox_ros_driver/c
 
 # Ouster namespace setup
 sed -i 's/"sensor_hostname" /"sensor_hostname" default="'$Ouster'.local" /g' src/ouster-ros/launch/sensor.launch
+# Ouster ROSTIME setup
+sed -i 's/"timestamp_mode" default=" "/"timestamp_mode" default="TIME_FROM_ROS_TIME"/g' src/ouster-ros/launch/sensor.launch
+
+#3. RealSense-ROS debian package install (https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy)
+sudo apt-get install ros-noetic-realsense2-camera
+
+#4. Microstrain-IMU debian package install (https://github.com/LORD-MicroStrain/microstrain_inertial)
+sudo apt-get install ros-noetic-microstrain-inertial-driver
+
+#5. TDR-3000 GPS 
+
+
+
+
+
+
+
+
